@@ -1,6 +1,6 @@
 import React from "react";
-import CardPizza from "../components/CardPizza"; 
-import pizzas from "../pizzas"; 
+import CardPizza from "../components/CardPizza";
+import { pizzas } from "../pizzas"; 
 import "../components/styles.css";
 
 const Home = () => {
@@ -11,11 +11,14 @@ const Home = () => {
         {pizzas.map((pizza, index) => (
           <CardPizza
             key={index}
-            imageUrl={pizza.image} 
+            imageUrl={pizza.image}
             title={pizza.name}
-            description="Ingredientes" 
-            ingredients={pizza.ingredients} 
-            precio={pizza.price.toLocaleString('es-CL', { style: 'currency', currency: 'CLP' })}
+            description="Ingredientes"
+            ingredients={pizza.ingredients}
+            precio={pizza.price.toLocaleString("es-CL", {
+              style: "currency",
+              currency: "CLP",
+            })}
           />
         ))}
       </div>

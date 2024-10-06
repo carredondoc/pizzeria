@@ -1,9 +1,11 @@
+// Importar imágenes
 import margaritaImage from "./assets/images/margarita.jpg";
 import pepperoniImage from "./assets/images/pepperoni.jpg";
 import hawaianaImage from "./assets/images/hawaiana.jpg";
 import cuatroQuesosImage from "./assets/images/quesos.jpg";
 import vegetarianaImage from "./assets/images/vegetariana.jpg";
 import bbqChickenImage from "./assets/images/bbq.jpg";
+
 
 const pizzas = [
   {
@@ -50,4 +52,27 @@ const pizzas = [
   },
 ];
 
-export default pizzas;
+
+const cartItems = [
+  {
+    name: "Pizza Margarita",
+    price: 8990,
+    quantity: 2,
+    image: margaritaImage, 
+  },
+  {
+    name: "Pizza Pepperoni",
+    price: 10990,
+    quantity: 1,
+    image: pepperoniImage, 
+  },
+  {
+    name: "Pizza Hawaiana",
+    price: 9990,
+    quantity: 3,
+    image: hawaianaImage,
+  },
+];
+
+
+export { pizzas, cartItems };
