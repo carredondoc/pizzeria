@@ -1,38 +1,23 @@
-import React from 'react';
-import Card from '../components/CardPizza';
-import '../components/styles.css';
-
-
-import imagen1 from '../assets/images/imagen1.jpg';
-import imagen2 from '../assets/images/imagen2.jpg';
-import imagen3 from '../assets/images/imagen3.jpg';
+import React from "react";
+import CardPizza from "../components/CardPizza"; // Asegúrate de que CardPizza esté correctamente importado
+import pizzas from "../pizzas"; // Importa el array de pizzas dinámicas
+import "../components/styles.css";
 
 const Home = () => {
   return (
-    <div className='propiedadesHome'>
+    <div className="propiedadesHome">
       <h2>¡Descubre nuestra variedad de deliciosas pizzas!</h2>
       <div className="cards-container">
-        <Card 
-          imageUrl={imagen1}
-          title="Pizza Napolitana"
-          description="Ingredientes"
-          ingredients="🍕mozzarella, tomates, jamón, orégano"
-          precio="5.950"
-        />
-        <Card 
-          imageUrl={imagen2}
-          title="Pizza Española"
-          description="Ingredientes"
-          ingredients="🍕mozzarella, tomates, jamón, orégano"
-          precio="6.950"
-        />
-        <Card 
-          imageUrl={imagen3}
-          title="Pizza Pepperoni"
-          description="Ingredientes"
-          ingredients="🍕mozzarella, tomates, jamón, orégano"
-          precio="6.950"
-        />
+        {pizzas.map((pizza, index) => (
+          <CardPizza
+            key={index}
+            imageUrl={pizza.image} // URL de la imagen desde el array de pizzas
+            title={pizza.name} // Nombre de la pizza
+            description="Ingredientes" // Puedes mantenerlo si es necesario
+            ingredients={pizza.ingredients} // Lista de ingredientes unida por comas
+            precio={pizza.price.toLocaleString('es-CL', { style: 'currency', currency: 'CLP' })}
+          />
+        ))}
       </div>
     </div>
   );

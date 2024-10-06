@@ -83,6 +83,10 @@ header p {
 .propiedadesHome {
   background-color: #212121;
   color: white;
+  display: flex;
+  flex-direction: column;
+ 
+ 
 }
 .propiedadesHome h2 {
   text-align: center;
@@ -119,16 +123,34 @@ header p {
 
 .card h3 {
   text-align: left;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
 
-  font-size: 1.5rem;
+  font-size: 35px;
 }
 
 .card p {
   margin: 0.5rem 0;
 }
 
+.ingredientes{
+
+  font-size: 30px;
+}
+
+ul {
+  list-style-type: none;
+  text-align: left;
+  
+}
+
+li{
+  margin-bottom: 10px;
+  padding-left: 50px;
+
+
+}
 .borde-descripcion {
   border-top: solid 1px rgb(174, 174, 174);
   border-bottom: solid 1px rgb(174, 174, 174);
@@ -226,8 +248,7 @@ header p {
   cursor: pointer;
 }
 
-.itemsLogin form button:hover{
-
+.itemsLogin form button:hover {
   background-color: rgb(94, 94, 94);
   transition: 0.2s;
 }
@@ -284,10 +305,7 @@ header p {
   cursor: pointer;
 }
 
-.itemsRegister form button:hover{
-
+.itemsRegister form button:hover {
   background-color: rgb(94, 94, 94);
   transition: 0.2s;
 }
-
-
