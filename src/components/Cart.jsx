@@ -7,14 +7,14 @@ const Cart = () => {
   const [cart, setCart] = useState(cartItems);
 
  
-  const increaseQuantity = (index) => {
+  const aumentar = (index) => {
     const updatedCart = [...cart];
     updatedCart[index].quantity += 1;
     setCart(updatedCart);
   };
 
   
-  const decreaseQuantity = (index) => {
+  const disminuir = (index) => {
     const updatedCart = [...cart];
     if (updatedCart[index].quantity > 1) {
       updatedCart[index].quantity -= 1;
@@ -49,9 +49,9 @@ const Cart = () => {
               <p>Cantidad: {item.quantity}</p>
             </div>
             <div className="botonesCart">
-              <button onClick={() => increaseQuantity(index)}>+</button>
+              <button onClick={() => aumentar(index)}>+</button>
               <button
-                onClick={() => decreaseQuantity(index)}
+                onClick={() => disminuir(index)}
                 className="botonMenos"
               >
                 -
