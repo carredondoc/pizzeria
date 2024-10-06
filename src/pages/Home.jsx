@@ -1,6 +1,6 @@
 import React from "react";
-import CardPizza from "../components/CardPizza"; // Asegúrate de que CardPizza esté correctamente importado
-import pizzas from "../pizzas"; // Importa el array de pizzas dinámicas
+import CardPizza from "../components/CardPizza"; 
+import pizzas from "../pizzas"; 
 import "../components/styles.css";
 
 const Home = () => {
@@ -11,10 +11,10 @@ const Home = () => {
         {pizzas.map((pizza, index) => (
           <CardPizza
             key={index}
-            imageUrl={pizza.image} // URL de la imagen desde el array de pizzas
-            title={pizza.name} // Nombre de la pizza
-            description="Ingredientes" // Puedes mantenerlo si es necesario
-            ingredients={pizza.ingredients} // Lista de ingredientes unida por comas
+            imageUrl={pizza.image} 
+            title={pizza.name}
+            description="Ingredientes" 
+            ingredients={pizza.ingredients} 
             precio={pizza.price.toLocaleString('es-CL', { style: 'currency', currency: 'CLP' })}
           />
         ))}
