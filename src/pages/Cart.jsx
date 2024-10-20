@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { cartItems } from "../pizzas"; 
-import "./styles.css";
+import "../components/styles.css";
+
 
 const Cart = () => {
   

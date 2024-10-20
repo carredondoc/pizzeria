@@ -196,7 +196,7 @@ li{
   background-color: #656565;
 }
 
-.ventanaLogin {
+.ventanaLogin, .profile {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -204,7 +204,7 @@ li{
   height: 70vh;
 }
 
-.itemsLogin {
+.itemsLogin, .contenidoProfile {
   display: flex;
   flex-direction: column;
   color: white;
@@ -413,4 +413,65 @@ font-size: 30px;
 .ingredientes{
 
   font-weight: bold;
+}
+
+.principalError{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: solid 2px black;
+ 
+}
+
+.contenidoError{
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 750px;
+  height: 500px;
+}
+
+.imagenError{
+  display: flex;
+
+  height: 400px;
+  margin-right: 50px;
+}
+
+.textoError h2{
+font-size: 40px;
+margin-bottom: 20px;
+
+}
+
+.textoError p{
+
+  line-height: 30px;
+}
+
+.textoError button{
+
+  background-color: rgb(71, 71, 71);
+  border-radius: 20px;
+  padding: 10px;
+  color: white;
+  margin-top: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.cerrarSesion{
+
+    background-color: rgb(44, 44, 44);
+  color: white;
+  border-radius: 15px;
+  border: rgb(0, 0, 0) 1px solid;
+  padding: 10px;
+  width: 120px;
+  cursor: pointer;
+  margin-top: 20px;
+
 }
