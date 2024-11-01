@@ -8,6 +8,7 @@ const Card = ({
   tituloIngredientes,
   ingredients,
   precio,
+  onAddToCart, 
 }) => {
   return (
     <div className="card">
@@ -22,13 +23,14 @@ const Card = ({
           ))}
         </ul>
       </div>
-
       <p className="precio">
         Precio: <span>{precio}</span>
       </p>
       <div className="card-buttons">
         <button className="boton boton-ver">Ver más 👀</button>
-        <button className="boton boton-agregar">Añadir 🛒</button>
+        <button className="boton boton-agregar" onClick={onAddToCart}>
+          Añadir 🛒
+        </button>
       </div>
     </div>
   );

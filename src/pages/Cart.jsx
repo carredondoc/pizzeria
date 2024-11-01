@@ -1,35 +1,10 @@
-import React, { useState } from "react";
-import { cartItems } from "../pizzas"; 
+import React, { useContext } from "react";
+import { CartContext } from "../context/CartContext"; 
 import "../components/styles.css";
 
-
 const Cart = () => {
-  
-  const [cart, setCart] = useState(cartItems);
-
- 
-  const aumentar = (index) => {
-    const updatedCart = [...cart];
-    updatedCart[index].quantity += 1;
-    setCart(updatedCart);
-  };
-
-  
-  const disminuir = (index) => {
-    const updatedCart = [...cart];
-    if (updatedCart[index].quantity > 1) {
-      updatedCart[index].quantity -= 1;
-    } else {
-      updatedCart.splice(index, 1); 
-    }
-    setCart(updatedCart);
-  };
-
-  
-  const totalPrice = cart.reduce(
-    (total, item) => total + item.price * item.quantity,
-    0
-  );
+  const { cart, aumentar, removeFromCart, totalPrice } =
+    useContext(CartContext); 
 
   return (
     <div className="containerCart">
@@ -37,7 +12,7 @@ const Cart = () => {
       <ul className="itemsCart">
         {cart.map((item, index) => (
           <li key={index} className="listaItemsCart">
-            <img src={item.image} alt={item.name} className="imagenItemCart" />
+            <img src={item.img} alt={item.name} className="imagenItemCart" />
             <div className="containerTextos">
               <h3>{item.name}</h3>
               <p>
@@ -50,9 +25,9 @@ const Cart = () => {
               <p>Cantidad: {item.quantity}</p>
             </div>
             <div className="botonesCart">
-              <button onClick={() => aumentar(index)}>+</button>
+              <button onClick={() => aumentar(item)}>+</button>
               <button
-                onClick={() => disminuir(index)}
+                onClick={() => removeFromCart(item.id)}
                 className="botonMenos"
               >
                 -

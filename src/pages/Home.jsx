@@ -1,23 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import CardPizza from "../components/CardPizza";
 import "../components/styles.css";
+import { CartContext } from "../context/CartContext";
 
 const Home = () => {
-  const [pizzas, setPizzas] = useState([]); 
+  const [pizzas, setPizzas] = useState([]);
+  const { addToCart } = useContext(CartContext); 
 
-  
   useEffect(() => {
     const fetchPizzas = async () => {
       try {
         const response = await fetch("http://localhost:5000/api/pizzas");
         const data = await response.json();
-        setPizzas(data); 
+        setPizzas(data);
       } catch (error) {
-        console.error("Error al cargar las pizzas:", error); 
+        console.error("Error al cargar las pizzas:", error);
       }
     };
 
-    fetchPizzas(); 
+    fetchPizzas();
   }, []);
 
   return (
@@ -36,6 +37,7 @@ const Home = () => {
               style: "currency",
               currency: "CLP",
             })}
+            onAddToCart={() => addToCart(pizza)} 
           />
         ))}
       </div>

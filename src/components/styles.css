@@ -336,6 +336,12 @@ li{
   text-align: center;
 
 }
+
+.listaItemsCart h3{
+
+text-transform: capitalize;
+
+}
 .containerCart h2{
 
   margin: 25px 0;
