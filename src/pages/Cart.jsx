@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
-import { CartContext } from "../context/CartContext"; 
+import { CartContext } from "../context/CartContext";
+import { UserContext } from "../context/UserContext";
 import "../components/styles.css";
 
 const Cart = () => {
-  const { cart, aumentar, removeFromCart, totalPrice } =
-    useContext(CartContext); 
+  const { cart, addToCart, removeFromCart, totalPrice } =
+    useContext(CartContext);
+  const { token } = useContext(UserContext);
 
   return (
     <div className="containerCart">
@@ -25,7 +27,7 @@ const Cart = () => {
               <p>Cantidad: {item.quantity}</p>
             </div>
             <div className="botonesCart">
-              <button onClick={() => aumentar(item)}>+</button>
+              <button onClick={() => addToCart(item)}>+</button>
               <button
                 onClick={() => removeFromCart(item.id)}
                 className="botonMenos"
@@ -43,7 +45,11 @@ const Cart = () => {
           currency: "CLP",
         })}
       </h3>
-      <button className="botonPagar">Pagar</button>
+      {token ? (
+        <button className="botonPagar">Pagar</button>
+      ) : (
+        <p className="mensajeAdvertencia">¡Inicia sesión para realizar tu pedido!</p>
+      )}
     </div>
   );
 };

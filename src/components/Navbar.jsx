@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { CartContext } from "../context/CartContext"; 
+import { CartContext } from "../context/CartContext";
+import { UserContext } from "../context/UserContext";
 import "./styles.css";
 import logo from "../assets/images/logo.png";
 
 const Navbar = () => {
-  const { totalPrice } = useContext(CartContext); 
-
-  const token = false; 
+  const { totalPrice } = useContext(CartContext);
+  const { token, logout } = useContext(UserContext);
 
   return (
     <nav>
@@ -23,7 +23,9 @@ const Navbar = () => {
                 <Link to="/profile">🔓 Profile</Link>
               </li>
               <li>
-                <Link to="#">🔒 Logout</Link>
+                <Link to="/" onClick={logout}>
+                  🔒 Logout
+                </Link>
               </li>
             </>
           ) : (
@@ -33,9 +35,6 @@ const Navbar = () => {
               </li>
               <li>
                 <Link to="/register">🔐 Register</Link>
-              </li>
-              <li>
-                <Link to="/profile">🤌 Usuario</Link>
               </li>
             </>
           )}

@@ -471,7 +471,7 @@ margin-bottom: 20px;
 
 .cerrarSesion{
 
-    background-color: rgb(44, 44, 44);
+  background-color: rgb(44, 44, 44);
   color: white;
   border-radius: 15px;
   border: rgb(0, 0, 0) 1px solid;
@@ -479,5 +479,12 @@ margin-bottom: 20px;
   width: 120px;
   cursor: pointer;
   margin-top: 20px;
+
+}
+
+.mensajeAdvertencia{
+
+padding-top: 20px;
+padding-bottom: 30px;
 
 }
