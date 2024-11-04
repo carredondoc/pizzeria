@@ -5,7 +5,7 @@ import { CartContext } from "../context/CartContext";
 
 const Home = () => {
   const [pizzas, setPizzas] = useState([]);
-  const { addToCart } = useContext(CartContext); 
+  const { addToCart } = useContext(CartContext);
 
   useEffect(() => {
     const fetchPizzas = async () => {
@@ -28,6 +28,7 @@ const Home = () => {
         {pizzas.map((pizza, index) => (
           <CardPizza
             key={index}
+            id={pizza.id} // Asegúrate de pasar el id aquí
             imageUrl={pizza.img}
             title={pizza.name}
             descripcion={pizza.desc}
@@ -37,7 +38,7 @@ const Home = () => {
               style: "currency",
               currency: "CLP",
             })}
-            onAddToCart={() => addToCart(pizza)} 
+            onAddToCart={() => addToCart(pizza)}
           />
         ))}
       </div>

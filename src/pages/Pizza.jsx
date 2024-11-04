@@ -9,7 +9,10 @@ const Pizza = () => {
   useEffect(() => {
     const fetchPizza = async () => {
       try {
-        const response = await fetch(`/api/pizzas/${id}`);
+        const response = await fetch(`http://localhost:5000/api/pizzas/${id}`);
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
         const data = await response.json();
         setPizza(data);
       } catch (error) {
@@ -26,12 +29,18 @@ const Pizza = () => {
   if (!pizza) return <p>No se encontró la pizza.</p>;
 
   return (
-    <div>
-      <h1>{pizza.name}</h1>
-      <img src={pizza.img} alt={pizza.name} />
-      <p>{pizza.description}</p>
+    <div className="card">
+      <h1 className="nombrePizza">{pizza.name}</h1>
+      <img src={pizza.img} alt={pizza.name} className="card-image" />
+      <p>{pizza.desc}</p>
+      <ul></ul>
+      <p></p>
       <p>
-        Precio: {pizza.price.toLocaleString("es-CL", { style: "currency", currency: "CLP" })}
+        Precio:{" "}
+        {pizza.price.toLocaleString("es-CL", {
+          style: "currency",
+          currency: "CLP",
+        })}
       </p>
     </div>
   );

@@ -488,3 +488,14 @@ padding-top: 20px;
 padding-bottom: 30px;
 
 }
+
+.prueba{
+
+  background-color: white;
+}
+
+.nombrePizza{
+  padding-bottom: 20px;
+
+  text-transform: capitalize;
+}

@@ -1,14 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./styles.css";
 
-const Card = ({
+const CardPizza = ({
   imageUrl,
   title,
   descripcion,
   tituloIngredientes,
   ingredients,
   precio,
-  onAddToCart, 
+  onAddToCart,
+  id, // Asegurar que se recibe la propiedad id
 }) => {
   return (
     <div className="card">
@@ -27,7 +29,9 @@ const Card = ({
         Precio: <span>{precio}</span>
       </p>
       <div className="card-buttons">
-        <button className="boton boton-ver">Ver más 👀</button>
+        <Link to={`/pizza/${id}`}>
+          <button className="boton boton-ver">Ver más 👀</button>
+        </Link>
         <button className="boton boton-agregar" onClick={onAddToCart}>
           Añadir 🛒
         </button>
@@ -36,4 +40,4 @@ const Card = ({
   );
 };
 
-export default Card;
+export default CardPizza;

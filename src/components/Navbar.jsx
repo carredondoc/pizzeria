@@ -23,7 +23,7 @@ const Navbar = () => {
                 <Link to="/profile">🔓 Profile</Link>
               </li>
               <li>
-                <Link to="/" onClick={logout}>
+                <Link to="#" onClick={logout}>
                   🔒 Logout
                 </Link>
               </li>
