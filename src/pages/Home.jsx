@@ -28,7 +28,7 @@ const Home = () => {
         {pizzas.map((pizza, index) => (
           <CardPizza
             key={index}
-            id={pizza.id} // Asegúrate de pasar el id aquí
+            id={pizza.id}
             imageUrl={pizza.img}
             title={pizza.name}
             descripcion={pizza.desc}

@@ -10,7 +10,7 @@ const CardPizza = ({
   ingredients,
   precio,
   onAddToCart,
-  id, // Asegurar que se recibe la propiedad id
+  id, 
 }) => {
   return (
     <div className="card">

@@ -5,8 +5,8 @@ import "../components/styles.css";
 
 const Cart = () => {
   const { cart, addToCart, removeFromCart, totalPrice } =
-    useContext(CartContext); // Usa el contexto
-  const { token } = useContext(UserContext); // Verifica si el usuario está autenticado
+    useContext(CartContext); 
+  const { token } = useContext(UserContext); 
 
   return (
     <div className="containerCart">
